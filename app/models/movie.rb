@@ -1,7 +1,6 @@
 require 'open-uri'
 
 class Movie
-  attr_accessor :id
 
   def self.build_from_id(id)
     file = open("http://www.omdbapi.com/?i=#{URI.escape(id)}&tomatoes=true")

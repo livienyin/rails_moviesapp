@@ -2,15 +2,20 @@
 <html>
 <head>
   <title>RailsMovies</title>
+  <!--<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">-->
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
-</head>
-
+<link href='http://fonts.googleapis.com/css?family=Noto+Sans|Croissant+One' rel='stylesheet' type='text/css'>
 <body>
-  <h1><%= render "search_form.erb" %></h1>
-<%= yield %>
-
+  <div class = "container">
+  	<div id = "header">
+      <h1 id = "logo">Flick Picks</h1>
+      <%= render "search_form.erb" %>
+    </div>
+    <div id = "main"
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>

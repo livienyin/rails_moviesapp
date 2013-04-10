@@ -1,3 +1,38 @@
 // Place all the styles related to the movie controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  display: block;
+  margin: -60px 0 0 0;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  background-color: white;
+}
+
+#header {
+  width: 100%;
+  text-align: left;
+  margin: auto;
+  height: 150px;
+  background-color: black;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+#logo {
+  font-family: 'Croissant One', serif;
+  font-size: 5em;
+}
+
+#main {
+  padding: 100px;
+  margin: 0 auto;
+}
+
+.ol {
+	line-height: 2em;
+}

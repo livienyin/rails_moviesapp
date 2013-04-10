@@ -1,4 +1,4 @@
-<ol>
+<ol class = "ol">
   <% @movie_search.movies.each do |movie| %>
   <li>
     <a href="<%= movie.url_for_query @movie_search.query %>">
