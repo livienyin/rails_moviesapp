@@ -1,14 +1,18 @@
-<h2>
-  <%= @movie.title %>
-  (<%= @movie.year %>)
-</h2>
-<% if @movie.poster.nil? %>
-<img src="" alt ="No Image Found" title="No Poster Found">
-<% else %>
-<img src="<%= @movie.poster %>" 
+
+  <% if @movie.poster.nil? %>
+    <img src="" alt ="No Image Found" title="No Poster Found">
+  <% else %>
+    <img src="<%= @movie.poster %>" 
      alt="Movie poster for <%= @movie.title %>" 
      title="Movie poster for <%= @movie.title %>">
-<% end %>
+  <% end %>
+
+
+<div class = "movie_info">
+  <h2>
+    <%= @movie.title %>
+    (<%= @movie.year %>)
+  </h2>
 <p>
   <%= @movie.plot %>
 </p>
@@ -67,3 +71,8 @@
     </ul>
   </dd>
 </dl>
+
+  <a href="/search?q=<%= URI.escape(@query) %>">
+    Back to search results for <%= @movie.title %>
+  </a> 
+</div>
