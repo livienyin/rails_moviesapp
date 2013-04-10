@@ -1,68 +1,67 @@
-
 <h2>
-  <%= @detail["Title"] %>
-  (<%= @detail["Year"] %>)
+  <%= @movie.title %>
+  (<%= @movie.year %>)
 </h2>
-<% if @detail["Poster"].nil? || @detail["Poster"] == "N/A" %>
+<% if @movie.poster.nil? %>
 <img src="" alt ="No Image Found" title="No Poster Found">
 <% else %>
-<img src="<%= @detail["Poster"] %>" 
-alt="Movie poster for <%= @detail["Title"] %>" 
-title="Movie poster for <%= @detail["Title"] %>">
+<img src="<%= @movie.poster %>" 
+     alt="Movie poster for <%= @movie.title %>" 
+     title="Movie poster for <%= @movie.title %>">
 <% end %>
 <p>
-  <%= @detail["Plot"] %>
+  <%= @movie.plot %>
 </p>
 <dl>
   <dt>
     Rating
   </dt>
   <dd>
-    <%= @detail["Rated"] %>
+    <%= @movie.rated %>
   </dd>
   <dt>
     Runtime
   </dt>
   <dd>
-    <%= @detail["Runtime"] %>
+    <%= @movie.runtime %>
   </dd>
   <dt>
     Genre
   </dt>
   <dd>
-    <%= @detail["Genre"] %>
+    <%= @movie.genre %>
   </dd>
   <dt>
     IMDB Rating
   </dt>
   <dd>
-    <%= @detail["imdbRating"] %>
+    <%= @movie.imdb_rating %>
   </dd>
   
   <dt>
     Rotten Tomatoes Rating
   </dt>
   <dd>
-    <%= @detail["tomatoRating"] %>
+    <%= @movie.rt_rating %>
   </dd>
 
   <dt>
-    Actor<%= @actors.length > 1 ? "s" : "" %>
+    Actor<%= @movie.actors.length > 1 ? "s" : "" %>
   </dt>
   <dd>
     <ul>
-      <% @actors.each do |actor| %>
+      <% @movie.actors.each do |actor| %>
       <li><%= actor %></li>
       <% end %>
     </ul>
   </dd>
   
   <dt>
-    Director<%= @directors.length > 1 ? "s" : "" %>
+    Director<%= @movie.directors.length > 1 ? "s" : "" %>
   </dt>
   <dd>
     <ul>
-      <% @directors.each do |director| %>
+      <% @movie.directors.each do |director| %>
       <li><%= director %></li>
       <% end %>
     </ul>

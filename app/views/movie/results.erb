@@ -1,12 +1,10 @@
 <ol>
-  <% @results.each do |result| %>
-    <li>
-	  <% unless @query.nil? %> 
-	  <a href="/movies?id=<%= result["imdbID"]%>&amp;q=<%= URI.escape(@query) %>">
-      <% end %>                          
-      <%= result["Title"] %>
-      </a>                                                        
-   	(<%= result["Year"] %>)
-  </li>                                                          
+  <% @movie_search.movies.each do |movie| %>
+  <li>
+    <a href="<%= movie.url_for_query @movie_search.query %>">
+    <%= movie.title %>
+    </a>
+    (<%= movie.year %>)
+  </li>                                                         
   <% end %>
 </ol>

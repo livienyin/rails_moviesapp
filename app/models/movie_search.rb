@@ -1,16 +1,12 @@
 require 'open-uri'
 
 class MovieSearch
-  attr_accessor :query
+  attr_accessor :query, :movies
 
-  def search(query)
+  def initialize(query)
+    @query = query
     file = open("http://www.omdbapi.com/?s=#{URI.escape(query)}")
-    JSON.load(file.read)["Search"] || []
-    # if @results.size == 1 || (@results.size > 1 && @button == "lucky")
-    #   redirect "/movies?id=#{@results.first["imdbID"]}&q=#{query}"
-    # else
-    #   erb :serp
-    # end
+    result_entries = JSON.load(file.read)["Search"] || []
+    @movies = result_entries.map{|movie_data| Movie.new movie_data}
   end
-
 end
